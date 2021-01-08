@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="inner">
+        <form method="POST" class='form'>
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+                {% if user.id == post.author.id %}
+                    <h2>Do you really want to delete post?</h2>    
+                    <button class='button' type="submit">Delete</button>
+            {% endif %}
+                {% endif %}        
+        </form>
+    </div>
+{% endblock %}

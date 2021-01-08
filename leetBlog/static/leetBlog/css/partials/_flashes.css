@@ -1,0 +1,53 @@
+.flash {
+    background: white;
+    box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    animation: slide 0.3s forwards 0.15s ease-in-out 1;
+}
+
+.flash__text {
+    flex: 1;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+.flash__remove {
+    background: none;
+    font-size: 2.5rem;
+    border: 0;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.flash--success {
+    background: rgb(11, 161, 19);
+    border: 1px solid rgb(9, 102, 16);
+}
+.flash--error {
+    background: rgb(187, 14, 14);
+    border: 1px solid rgb(99, 9, 9);
+}
+.flash--info {
+    background: rgb(235, 177, 17);
+    border: 1px solid rgb(124, 79, 12);
+}
+.flash p {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+@keyframes slide {
+    25% {
+        transform: translateX(3%);
+    }
+    75% {
+        transform: translateX(-3%);
+    }
+}

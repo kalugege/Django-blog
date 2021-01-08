@@ -1,0 +1,152 @@
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    font-size: 1.5rem;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+}
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 3px 1px rgba(7, 8, 97, 0.829);
+}
+input.input--error,
+textarea.input--error {
+    border-color: red;
+}
+input[type='file'] {
+    margin-top: 1rem;
+    width: 86%;
+}
+input[type='checkbox'] {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: -2.7rem;
+    width: 20%;
+}
+label {
+    padding: 10px 0;
+    font-size: 2rem;
+    display: block;
+    font-family: 'Lato', sans-serif;
+}
+
+.form {
+    background: white;
+    padding: 7rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+    margin: 0;
+    width: 100%;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid black;
+    font-family: 'Lato', sans-serif;
+}
+.form h2.no-underline {
+    border: none;
+}
+
+input.button.delete {
+    width: 20%;
+    margin-top: 2rem;
+    background-color: rgb(190, 49, 49);
+    color: white;
+    cursor: pointer;
+}
+
+button.button {
+    margin-top: 2rem;
+    border: 0;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    width: 12rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    color: whitesmoke;
+    background: rgb(24, 27, 235);
+    cursor: pointer;
+}
+a.button {
+    margin-top: 2rem;
+    border: 0;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    width: 12rem;
+    padding: 1.5rem 2rem 2rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    color: whitesmoke;
+    background: rgb(11, 76, 196);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input.button:hover {
+    background-color: rgb(190, 40, 40);
+}
+
+/**** form error messages ****/
+.error .controls p strong {
+    color: red !important;
+    font-size: 1.3rem !important;
+}
+
+.error input,
+.error textarea {
+    border: 1px solid rgb(216, 44, 44);
+    box-shadow: 0 0 4px 1px rgb(216, 44, 44);
+}
+
+.controls p,
+.controls li {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: sans-serif;
+}
+
+/***** login error message ******/
+.alert-error {
+    padding: 1rem 0;
+    background-color: rgba(216, 44, 44, 0.3);
+    width: 90%;
+    margin-bottom: 0.5rem;
+}
+
+.alert-error ul {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: rgb(145, 19, 19);
+}
+
+/**** cancel button ****/
+a.button.cancel {
+    padding: 1rem 5rem;
+    margin: 2rem 1rem 0 0;
+    background-color: rgb(156, 152, 152);
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    outline: none;
+    white-space: pre-wrap;
+    text-decoration: none;
+}
+
+/****** front end validation err message   *****/
+p.error {
+    color: red;
+    font-size: 1.3rem;
+    font-weight: 600;
+}

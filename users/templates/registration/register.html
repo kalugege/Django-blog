@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+    <div class="inner">
+        <form method="POST" class='form'>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class='button' type="submit" name='register'>Sign up</button>
+        </form>
+        <script src='{% static 'users/registration.js' %}'></script>
+
+    </div>
+{% endblock %}    

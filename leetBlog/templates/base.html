@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'leetBlog/css/style.css' %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <header class="top">
+            <nav class="nav">
+                <div class="nav-section">
+                    <li class="item">
+                        <a class="nav_link nav_link--logo" href="{% url 'home' %}">
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    <li class="item">
+                        <a
+                            class="nav_link"
+                            href="{% url 'add' %}"
+                        >
+                            <span>Add Posts</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </div>
+                <div class="nav-section">
+                  {% if user.is_authenticated %}
+                    <li class="item">
+                        <a
+                            class="nav_link"
+                            href="{% url 'logout' %}"
+                        >
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a
+                            class="nav_link"
+                            href="{% url 'edit' %}"
+                        >
+                            <span>Edit Profile</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="item">
+                        <a
+                            class="nav_link "
+                            href="{% url 'register' %}"
+                            >Register</a
+                        >
+                    </li>
+                    <li class="item">
+                        <a
+                            class="nav_link"
+                            href="{% url 'login' %}"
+                            >Log In</a
+                        >
+                    </li>
+                    {% endif %}
+                </div>
+            </nav>
+        </header>
+        {% comment %} <ul class="bar">
+            <li><a class="active" href="{% url 'home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+
+            <li><a href="{% url 'add' %}">add post</a></li>
+            <li><a href="{% url 'logout' %}">logout</a></li>
+            <li><a href="{% url 'edit' %}">edit profile</a></li>
+
+            {% else %}
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul> {% endcomment %}
+      {% block messages %}
+            {% if messages %}
+            <div class="inner">
+                <div class="flash-messages">
+                        {% for message in messages %}
+                            <div class="flash flash--{{ message.tags }}">
+                                <p class="flash__text">{{ message }}</p>
+                                <button class="flash__remove" onclick="this.parentElement.remove()">&times;</button>
+                            </div>
+                        {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+      {% endblock messages %}
+      {% block content %} {% endblock%}
+    </body>
+</html>
